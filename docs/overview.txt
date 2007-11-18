@@ -98,7 +98,7 @@ where my ``myapp`` is the name of your Django app, e.g. ``registration``.
 A full example can be found at `docs/setup-example.txt`_ and should be copied to
 the parent directory of your app as ``setup.py``.
 
-.. _docs/setup-example.txt: http://django-reusableapps.googlecode.com/svn/trunk/docs/setup-example.txt
+.. _docs/setup-example.txt: http://django-reusableapps.googlecode.com/svn/trunk/docs/setup-example.py.txt
 
 Building egg-based Django apps
 ==============================
