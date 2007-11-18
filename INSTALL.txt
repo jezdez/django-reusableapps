@@ -1,0 +1,18 @@
+To install django-reusableapps, run the following command inside this directory:
+
+    python setup.py install
+
+Please note that the bootstrap file of the setuptools ``'ez_setup.py'`` is
+bundled with django-reusableapps. During the installation of reusableapps, 
+the setuptools will be installed. Access to the internet might be needed for
+this automatic process. More information on setuptools:
+http://peak.telecommunity.com/DevCenter/setuptools
+
+Please have a look at the file docs/overview.txt for more information. 
+
+Note that this application requires Python 2.3 or later, and a recent
+Subversion checkout of Django. You can obtain Python from
+http://www.python.org/ and Django from http://www.djangoproject.com/.
+
+This install notice was bluntly stolen from James Bennett's registration
+package, http://code.google.com/p/django-registration/
