@@ -1,6 +1,6 @@
-=================================
-Django support for reusable apps.
-=================================
+====================================
+Reusable Django apps with setuptools
+====================================
 
 This is yet another approach on enabling Django to load reusable, pluggable,
 egg-based applications without changing the Django sourcecode. Think of
@@ -23,11 +23,11 @@ Get the source from the application site at::
 
     http://code.google.com/p/django-reusableapps/
 
-To install ``reusableapps``, follow these steps:
+To install *reusableapps*, follow these steps:
 
-    1. Follow the instructions in the `INSTALL.txt file`_.
-    2. Add ``import reusableapps`` to the top of your `setting file`_.
-    3. Add a new setting to your `setting file`_, a list of locations of
+    1. Follow the instructions in the `INSTALL file`_.
+    2. Add ``import reusableapps`` to the top of your `settings file`_.
+    3. Add a new setting to your `settings file`_, a list of locations of
        reusable apps, in search order. Note that these paths should use
        Unix-style forward slashes, even on Windows.
        
@@ -47,8 +47,8 @@ To install ``reusableapps``, follow these steps:
 Putting it together
 -------------------
 
-When finished with above installation instructions, your `setting file`_
-should look something like this at the bottom::
+Once you finished with above installation instructions, your `settings file`_
+should look something like this::
 
     REUSABLE_APPS_DIRS = (
         '/home/jannis/django/reusable_apps',
@@ -76,10 +76,10 @@ If you want to use templates from a egg-based Django app please add
 ``'django.template.loaders.eggs.load_template_source'`` to the ``TEMPLATE_LOADERS_``
 setting.
 
-.. _INSTALL.txt file: http://django-reusableapps.googlecode.com/svn/trunk/INSTALL.txt
-.. _setting file: http://www.djangoproject.com/documentation/settings/
-.. _INSTALLED_APPS: http://www.djangoproject.com/documentation/settings/#installed-apps
-.. _TEMPLATE_LOADERS: http://www.djangoproject.com/documentation/settings/#template-loaders
+.. _INSTALL file: http://django-reusableapps.googlecode.com/svn/trunk/INSTALL.rst
+.. _settings file: http://docs.djangoproject.com/en/dev/ref/settings/
+.. _INSTALLED_APPS: http://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
+.. _TEMPLATE_LOADERS: http://docs.djangoproject.com/en/dev/ref/settings/#template-loaders
 
 Adding support for reusable applications to your own Django app
 ===============================================================
@@ -95,10 +95,10 @@ Furthermore you need to add an 'entry point' to the setup keywords::
     entry_points={'django.apps': 'myapp = myapp'},
 
 where my ``myapp`` is the name of your Django app, e.g. ``registration``.
-A full example can be found at `docs/setup-example.txt`_ and should be copied to
+A full example can be found at setup-example.py_ and should be copied to
 the parent directory of your app as ``setup.py``.
 
-.. _docs/setup-example.txt: http://django-reusableapps.googlecode.com/svn/trunk/docs/setup-example.py.txt
+.. _setup-example.py: http://django-reusableapps.googlecode.com/svn/trunk/docs/setup-example.py
 
 Building egg-based Django apps
 ==============================
@@ -110,7 +110,7 @@ you can run::
 
 to build a egg file of it. It will be created in the ``dist`` directory and
 have a filename like ``dummyapp-0.1-py2.5.egg``. You can then distribute it
-and use it by placing it one of the ``REUSABLE_APPS_DIRS`` of your Django
+and use it by placing it in one of the ``REUSABLE_APPS_DIRS`` of your Django
 project.
 
 Support

@@ -1,5 +1,3 @@
-VERSION = "0.1"
-
 try:
     from pkg_resources import working_set, DistributionNotFound, Environment, \
         VersionConflict, UnknownExtra

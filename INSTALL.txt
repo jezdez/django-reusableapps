@@ -2,7 +2,7 @@ To install django-reusableapps, run the following command inside this directory:
 
     python setup.py install
 
-Please note that the bootstrap file of the setuptools ``'ez_setup.py'`` is
+Please note that the bootstrap file of the setuptools 'ez_setup.py' is
 bundled with django-reusableapps. During the installation of reusableapps, 
 the setuptools will be installed. Access to the internet might be needed for
 this automatic process. More information on setuptools:
