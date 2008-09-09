@@ -22,24 +22,24 @@ Get the source from the application site at::
 
 To install *reusableapps*, follow these steps:
 
-    1. Follow the instructions in the `INSTALL file`_.
-    2. Add ``import reusableapps`` to the top of your `settings file`_.
-    3. Add a new setting to your `settings file`_, a list of locations of
-       reusable apps, in search order. Note that these paths should use
-       Unix-style forward slashes, even on Windows.
-       
-       For example::
-       
-         REUSABLE_APPS_DIRS = (
-             '/home/jannis/django/reusable_apps',
-             '/usr/share/django/apps',
-             'C:/www/django/apps'
-         )
-       
-    4. Add to the last line of your settings file (after the INSTALLED_APPS_ 
-       and REUSABLE_APPS_DIRS setting)::
-       
-         INSTALLED_APPS = reusableapps.search(REUSABLE_APPS_DIRS, INSTALLED_APPS)
+1. Follow the instructions in the `INSTALL file`_.
+2. Add ``import reusableapps`` to the top of your `settings file`_.
+3. Add a new setting to your `settings file`_, a list of locations of
+   reusable apps, in search order. Note that these paths should use
+   Unix-style forward slashes, even on Windows.
+   
+   For example::
+   
+     REUSABLE_APPS_DIRS = (
+         '/home/jannis/django/reusable_apps',
+         '/usr/share/django/apps',
+         'C:/www/django/apps'
+     )
+   
+4. Add to the last line of your settings file (after the INSTALLED_APPS_ 
+   and REUSABLE_APPS_DIRS setting)::
+   
+     INSTALLED_APPS = reusableapps.search(REUSABLE_APPS_DIRS, INSTALLED_APPS)
 
 Putting it together
 -------------------

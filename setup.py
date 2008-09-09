@@ -8,7 +8,7 @@ version = '0.1.1'
 
 setup(name='django-'+app_name,
       version=version,
-      description='Reusable, pluggable Django apps',
+      description='Reusable Django apps with setuptools',
       long_description=open('docs/overview.rst').read(),
       author='Jannis Leidel',
       author_email='jannis@leidel.info',
