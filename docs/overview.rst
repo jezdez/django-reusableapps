@@ -13,9 +13,6 @@ Egg-based Python modules (a.k.a. eggs) are compressed packaged Python modules
 like Django apps. Every Django app can be converted to an egg distribution by
 using a special setup.py file.
 
-Hope you like it,
-Jannis.
-
 Installation
 ============
 
