@@ -70,7 +70,7 @@ Using templates from egg-based Django apps
 ------------------------------------------
 
 If you want to use templates from a egg-based Django app please add
-``'django.template.loaders.eggs.load_template_source'`` to the ``TEMPLATE_LOADERS_``
+``'django.template.loaders.eggs.load_template_source'`` to the TEMPLATE_LOADERS_
 setting.
 
 .. _INSTALL file: http://django-reusableapps.googlecode.com/svn/trunk/INSTALL.rst
