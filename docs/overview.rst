@@ -2,14 +2,18 @@
 Reusable Django apps with setuptools
 ====================================
 
+.. contents::
+    :backlinks: none
+
 This is yet another approach on enabling Django to load reusable, pluggable,
 egg-based applications without changing the Django sourcecode. Think of
-plugins or components, e.g. django-registration, django-voting or django-tagging.
+plugins or components, e.g. django-registration, django-threadedcomments or
+django-tagging.
 
 It uses setuptools for finding, handling and loading egg-based Python modules
-with a certain "entry point" (``'django.apps'``).
+with a specific `entry point`_, e.g. ``'django.apps'``.
 
-Egg-based Python modules (a.k.a. eggs) are compressed packaged Python modules
+`Egg-based Python modules`_ (a.k.a. eggs) are compressed packaged Python modules
 like Django apps. Every Django app can be converted to an egg distribution by
 using a special setup.py file.
 
@@ -31,9 +35,10 @@ To install *reusableapps*, follow these steps:
    For example::
    
      REUSABLE_APPS_DIRS = (
-         '/home/jannis/django/reusable_apps',
+         '/home/jannis/.local',
+         '/Users/Jannis/Code/eggs',
          '/usr/share/django/apps',
-         'C:/www/django/apps'
+         'C:/www/django/apps',
      )
    
 4. Add to the last line of your settings file (after the INSTALLED_APPS_ 
@@ -47,10 +52,15 @@ Putting it together
 Once you finished with above installation instructions, your `settings file`_
 should look something like this::
 
+    import reusableapps
+    
+    # ...
+    
     REUSABLE_APPS_DIRS = (
-        '/home/jannis/django/reusable_apps',
-        '/usr/share/django/apps',
-        'C:/www/django/apps',
+      '/home/jannis/.local',
+      '/Users/Jannis/Code/eggs',
+      '/usr/share/django/apps',
+      'C:/www/django/apps',
     )
 
     INSTALLED_APPS = (
@@ -77,8 +87,10 @@ setting.
 .. _settings file: http://docs.djangoproject.com/en/dev/ref/settings/
 .. _INSTALLED_APPS: http://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 .. _TEMPLATE_LOADERS: http://docs.djangoproject.com/en/dev/ref/settings/#template-loaders
+.. _entry point: http://peak.telecommunity.com/DevCenter/setuptools#dynamic-discovery-of-services-and-plugins
+.. _Egg-based Python modules: http://peak.telecommunity.com/DevCenter/PythonEggs
 
-Adding support for reusable applications to your own Django app
+Adding support for *django-reusableapps* to your own Django app
 ===============================================================
 
 If you want to support django-reusableapps in your own Django app, you need
@@ -93,12 +105,13 @@ Furthermore you need to add an 'entry point' to the setup keywords::
 
 where my ``myapp`` is the name of your Django app, e.g. ``registration``.
 A full example can be found at setup-example.py_ and should be copied to
-the parent directory of your app as ``setup.py``.
+the parent directory of your app as ``setup.py``. You are then able to create
+an egg file with of this app.
 
 .. _setup-example.py: http://django-reusableapps.googlecode.com/svn/trunk/docs/setup-example.py
 
-Building egg-based Django apps
-==============================
+Creating egg files of reuasable Django apps
+===========================================
 
 Once you have a proper setup.py in the parent directory of your Django app,
 you can run::
